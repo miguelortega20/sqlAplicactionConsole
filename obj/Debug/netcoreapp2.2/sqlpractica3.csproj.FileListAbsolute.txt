@@ -1,0 +1,11 @@
+/Users/Miguel/Documents/MVCPRO/sqlpractica3/obj/Debug/netcoreapp2.2/sqlpractica3.csprojAssemblyReference.cache
+/Users/Miguel/Documents/MVCPRO/sqlpractica3/obj/Debug/netcoreapp2.2/sqlpractica3.csproj.CoreCompileInputs.cache
+/Users/Miguel/Documents/MVCPRO/sqlpractica3/obj/Debug/netcoreapp2.2/sqlpractica3.AssemblyInfoInputs.cache
+/Users/Miguel/Documents/MVCPRO/sqlpractica3/obj/Debug/netcoreapp2.2/sqlpractica3.AssemblyInfo.cs
+/Users/Miguel/Documents/MVCPRO/sqlpractica3/bin/Debug/netcoreapp2.2/sqlpractica3.deps.json
+/Users/Miguel/Documents/MVCPRO/sqlpractica3/bin/Debug/netcoreapp2.2/sqlpractica3.runtimeconfig.json
+/Users/Miguel/Documents/MVCPRO/sqlpractica3/bin/Debug/netcoreapp2.2/sqlpractica3.runtimeconfig.dev.json
+/Users/Miguel/Documents/MVCPRO/sqlpractica3/bin/Debug/netcoreapp2.2/sqlpractica3.dll
+/Users/Miguel/Documents/MVCPRO/sqlpractica3/bin/Debug/netcoreapp2.2/sqlpractica3.pdb
+/Users/Miguel/Documents/MVCPRO/sqlpractica3/obj/Debug/netcoreapp2.2/sqlpractica3.dll
+/Users/Miguel/Documents/MVCPRO/sqlpractica3/obj/Debug/netcoreapp2.2/sqlpractica3.pdb
