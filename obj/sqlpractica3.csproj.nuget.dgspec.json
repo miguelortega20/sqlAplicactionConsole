@@ -1,28 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/Users/Miguel/Documents/MVCPRO/sqlpractica3/sqlpractica3.csproj": {}
+    "c:\\Users\\Hp\\Desktop\\sqlAplicactionConsole\\sqlpractica3.csproj": {}
   },
   "projects": {
-    "/Users/Miguel/Documents/MVCPRO/sqlpractica3/sqlpractica3.csproj": {
+    "c:\\Users\\Hp\\Desktop\\sqlAplicactionConsole\\sqlpractica3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Miguel/Documents/MVCPRO/sqlpractica3/sqlpractica3.csproj",
+        "projectUniqueName": "c:\\Users\\Hp\\Desktop\\sqlAplicactionConsole\\sqlpractica3.csproj",
         "projectName": "sqlpractica3",
-        "projectPath": "/Users/Miguel/Documents/MVCPRO/sqlpractica3/sqlpractica3.csproj",
-        "packagesPath": "/Users/Miguel/.nuget/packages/",
-        "outputPath": "/Users/Miguel/Documents/MVCPRO/sqlpractica3/obj/",
+        "projectPath": "c:\\Users\\Hp\\Desktop\\sqlAplicactionConsole\\sqlpractica3.csproj",
+        "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\Hp\\Desktop\\sqlAplicactionConsole\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/Miguel/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
