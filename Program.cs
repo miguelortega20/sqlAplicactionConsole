@@ -8,37 +8,100 @@ using System.Threading.Tasks;
 
 namespace sqlpractica3
 {
-class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            try
+            {
+                Console.WriteLine("Connect to SQL Server and demo Create, Read, Update and Delete operations.");
 
+                // Build connection string
+                SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+                builder.DataSource = "localhost";   // update me
+                builder.UserID = "sa";              // update me
+                builder.Password = "Aabbcc12";      // update me
+                builder.InitialCatalog = "master";
 
-Console.WriteLine("Reading data from table, press any key to continue...");
-  
-                  Console.ReadKey(true);
+                // Connect to SQL
+                Console.Write("Connecting to SQL Server ... ");
+                using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+                {
+                    connection.Open();
+                    Console.WriteLine("Done.");
 
-                    sql = "SELECT Id, Name, Location FROM Employees;";
-
+                    // Create a sample database
+                    Console.Write("Dropping and creating database 'SampleDB' ... ");
+                    String sql = "DROP DATABASE IF EXISTS [SampleDB]; CREATE DATABASE [SampleDB]";
                     using (SqlCommand command = new SqlCommand(sql, connection))
- 
-                   {
-
-                        
-using (SqlDataReader reader = command.ExecuteReader())
-                        
-{
-                           
- while (reader.Read())
-                            
-{
-                                
-Console.WriteLine("{0} {1} {2}", reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
-                            
-}
-
-                        }
+                    {
+                        command.ExecuteNonQuery();
+                        Console.WriteLine("Done.");
                     }
 
-        
+                    // Create a Table and insert some sample data
+                    Console.Write("Creating sample table with data, press any key to continue...");
+                    Console.ReadKey(true);
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append("USE SampleDB; ");
+                    sb.Append("CREATE TABLE Employees ( ");
+                    sb.Append(" Id INT IDENTITY(1,1) NOT NULL PRIMARY KEY, ");
+                    sb.Append(" Name NVARCHAR(50), ");
+                    sb.Append(" Location NVARCHAR(50) ");
+                    sb.Append("); ");
+                    sb.Append("INSERT INTO Employees (Name, Location) VALUES ");
+                    sb.Append("(N'Jared', N'Australia'), ");
+                    sb.Append("(N'Nikita', N'India'), ");
+                    sb.Append("(N'Tom', N'Germany'); ");
+                    sql = sb.ToString();
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.ExecuteNonQuery();
+                        Console.WriteLine("Done.");
+                    }
+
+                    // INSERT 
+                    Console.Write("Inserting a new row into table, press any key to continue...");
+                    Console.ReadKey(true);
+                    sb.Clear();
+                    sb.Append("INSERT Employees (Name, Location) ");
+                    sb.Append("VALUES (@name, @location);");
+                    sql = sb.ToString();
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@name", "Jake");
+                        command.Parameters.AddWithValue("@location", "United States");
+                        int rowsAffected = command.ExecuteNonQuery();
+                        Console.WriteLine(rowsAffected + " row(s) inserted");
+                    }
+
+
+                    
+
+                    // READ 
+                    Console.WriteLine("Reading data from table, press any key to continue...");
+                    Console.ReadKey(true);
+                    sql = "SELECT Id, Name, Location FROM Employees;";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Console.WriteLine("{0} {1} {2}", reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+
+            Console.WriteLine("All done. Press any key to finish...");
+            Console.ReadKey(true);
+        }
+    }
+}
