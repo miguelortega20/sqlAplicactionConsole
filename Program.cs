@@ -75,7 +75,33 @@ namespace sqlpractica3
                         Console.WriteLine(rowsAffected + " row(s) inserted");
                     }
 
-                
+                    // UPDATE demo
+                    String userToUpdate = "Nikita";
+                    Console.Write("Updating 'Location' for user '" + userToUpdate + "', press any key to continue...");
+                    Console.ReadKey(true);
+                    sb.Clear();
+                    sb.Append("UPDATE Employees SET Location = N'United States' WHERE Name = @name");
+                    sql = sb.ToString();
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@name", userToUpdate);
+                        int rowsAffected = command.ExecuteNonQuery();
+                        Console.WriteLine(rowsAffected + " row(s) updated");
+                    }
+
+                    // DELETE demo
+                    String userToDelete = "Jared";
+                    Console.Write("Deleting user '" + userToDelete + "', press any key to continue...");
+                    Console.ReadKey(true);
+                    sb.Clear();
+                    sb.Append("DELETE FROM Employees WHERE Name = @name;");
+                    sql = sb.ToString();
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@name", userToDelete);
+                        int rowsAffected = command.ExecuteNonQuery();
+                        Console.WriteLine(rowsAffected + " row(s) deleted");
+                    }
 
                     // READ demo
                     Console.WriteLine("Reading data from table, press any key to continue...");
