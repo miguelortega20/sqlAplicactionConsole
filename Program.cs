@@ -15,12 +15,7 @@ class Program
             Console.WriteLine("Hello World!");
 
 
-
-
-        // cambio 
-
-
-        Console.WriteLine("Reading data from table, press any key to continue...");
+Console.WriteLine("Reading data from table, press any key to continue...");
   
                   Console.ReadKey(true);
 
@@ -42,7 +37,8 @@ using (SqlDataReader reader = command.ExecuteReader())
 Console.WriteLine("{0} {1} {2}", reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
                             
 }
-                
-        }
-    }
-}
+
+                        }
+                    }
+
+        
