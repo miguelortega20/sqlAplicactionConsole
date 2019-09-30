@@ -60,7 +60,7 @@ namespace sqlpractica3
                         Console.WriteLine("Done.");
                     }
 
-                    // INSERT 
+                    // INSERT demo
                     Console.Write("Inserting a new row into table, press any key to continue...");
                     Console.ReadKey(true);
                     sb.Clear();
@@ -75,10 +75,9 @@ namespace sqlpractica3
                         Console.WriteLine(rowsAffected + " row(s) inserted");
                     }
 
+                
 
-                    
-
-                    // READ 
+                    // READ demo
                     Console.WriteLine("Reading data from table, press any key to continue...");
                     Console.ReadKey(true);
                     sql = "SELECT Id, Name, Location FROM Employees;";
