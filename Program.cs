@@ -13,6 +13,36 @@ class Program
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+
+
+
+        // cambio 
+
+
+        Console.WriteLine("Reading data from table, press any key to continue...");
+  
+                  Console.ReadKey(true);
+
+                    sql = "SELECT Id, Name, Location FROM Employees;";
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+ 
+                   {
+
+                        
+using (SqlDataReader reader = command.ExecuteReader())
+                        
+{
+                           
+ while (reader.Read())
+                            
+{
+                                
+Console.WriteLine("{0} {1} {2}", reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
+                            
+}
+                
         }
     }
 }
